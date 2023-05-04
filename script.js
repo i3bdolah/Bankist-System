@@ -75,6 +75,7 @@ const inputTransferAmount = document.querySelector(".form__input--amount");
 const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
+const msgContainer = document.querySelector(".msg-container");
 
 /////////////////////////////////////////////////
 // Functions
@@ -234,7 +235,8 @@ btnLogin.addEventListener("click", function (e) {
   if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and Welcome Message
     labelWelcome.textContent = `Welcome ${currentAccount.owner.split(" ")[0]}`;
-    containerApp.style.opacity = 100;
+    containerApp.style.display = "grid";
+    msgContainer.style.display = "none";
 
     // Internationalization
     const now = new Date();
